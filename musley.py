@@ -38,4 +38,7 @@ while True:
 		for subfile in session["cur_dir"].files:
 			if subfile.name == findCommand(comd, "cat"):
 				print(subfile.content)
-	 
+	if findCommand(comd, "cd") != None:
+		for subdir in session["cur_dir"].subdirs:
+			if findCommand(comd, "cd") == subdir.name:
+				session["cur_dir"] = subdir
