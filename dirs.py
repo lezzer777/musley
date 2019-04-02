@@ -21,7 +21,8 @@ readme = file("readme.txt", "this is file for test bla-bla-bla", "txt")
 
 # Directories initialization sub --> parents
 
-userdir = dir("~", [], [readme])
+docs = dir("Documents", [], [])
+userdir = dir("~", [docs], [readme])
 home = dir("home", [userdir], [])
 
 root = dir("/", [home], []) # Always at the end
