@@ -1,7 +1,9 @@
 from termcolor import colored
+import dirs
 
 session = {
-	"user": "user"
+	"user": "user",
+	"cur_dir": dirs.userdir
 }
 
 
