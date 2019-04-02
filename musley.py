@@ -26,8 +26,16 @@ while True:
 		sys.exit("Goodbye, " + session["user"])
 
 	if findCommand(comd, "ls") != None:
-		for file in session["cur_dir"].files:
-			print(file.name)
 		for subdir in session["cur_dir"].subdirs:
 			print(colored(subdir.name, "blue"))
+		for file in session["cur_dir"].files:
+			print(file.name)
+
+	if findCommand(comd, "pwd") != None:
+		print(session["cur_dir"].name)
+
+	if findCommand(comd, "cat") != None:
+		for subfile in session["cur_dir"].files:
+			if subfile.name == findCommand(comd, "cat"):
+				print(subfile.content)
 	 
