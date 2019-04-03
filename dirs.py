@@ -26,3 +26,5 @@ userdir = dir("~", [docs], [readme])
 home = dir("home", [userdir], [])
 
 root = dir("/", [home], []) # Always at the end
+
+paths = [root, home, userdir, docs]

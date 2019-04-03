@@ -59,6 +59,12 @@ while True:
 			if subfile.name == findCommand(comd, "cat"):
 				print(subfile.content)
 	if findCommand(comd, "cd") != None:
-		for subdir in session["cur_dir"].subdirs:
-			if findCommand(comd, "cd") == subdir.name:
-				session["cur_dir"] = subdir
+		if comd == "cd ../" or comd == "cd ..":
+			for path in dirs.paths:
+				if session["cur_dir"] in path.subdirs:
+					session["cur_dir"] = path
+
+		else:
+			for subdir in session["cur_dir"].subdirs:
+				if findCommand(comd, "cd") == subdir.name:
+					session["cur_dir"] = subdir
