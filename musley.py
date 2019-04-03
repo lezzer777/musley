@@ -46,20 +46,20 @@ while True:
 	if findCommand(comd, 'exit') != None:
 		sys.exit("Goodbye, " + session["user"])
 
-	if findCommand(comd, "ls") != None:
+	elif findCommand(comd, "ls") != None:
 		for subdir in session["cur_dir"].subdirs:
 			print(colored(subdir.name, "blue"))
 		for file in session["cur_dir"].files:
 			print(file.name)
 
-	if findCommand(comd, "pwd") != None:
+	elif findCommand(comd, "pwd") != None:
 		print(session["cur_dir"].name)
 
-	if findCommand(comd, "cat") != None:
+	elif findCommand(comd, "cat") != None:
 		for subfile in session["cur_dir"].files:
 			if subfile.name == findCommand(comd, "cat"):
 				print(subfile.content)
-	if findCommand(comd, "cd") != None:
+	elif findCommand(comd, "cd") != None:
 		if comd == "cd ../" or comd == "cd ..":
 			for path in dirs.paths:
 				if session["cur_dir"] in path.subdirs:
@@ -69,9 +69,12 @@ while True:
 			for subdir in session["cur_dir"].subdirs:
 				if findCommand(comd, "cd") == subdir.name:
 					session["cur_dir"] = subdir
-
-	if findCommand(comd, "clear") != None:
+	
+	elif findCommand(comd, "clear") != None:
 		if name == "nt":
 			system("cls")
 		else:
 			system("clear")
+
+	else:
+		print(comd + ': command not found')
