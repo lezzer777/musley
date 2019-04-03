@@ -1,14 +1,34 @@
+#!/bin/env python3
+
 from termcolor import colored
+
 import dirs
 import sys
 import re
 
 session = {
-	"user": "user",
+	"user": "somebody",
 	"cur_dir": dirs.userdir
 }
 
 comd = ""
+
+def red(what):
+	a=colored(what,'red')
+	return a
+def blue(what):
+	a=colored(what,'blue')
+	return a
+def green(what):
+	a=colored(what,'green')
+	return a
+def yellow(what):
+	a=colored(what,'yellow')
+	return a
+def purple(what):
+	a=colored(what,'magenta')
+	return a
+	
 
 def findCommand(command, tofind):
 	if re.search(tofind, command):
@@ -18,11 +38,11 @@ def findCommand(command, tofind):
 
 while True:
 	try:
-		comd = input("[" + session["user"] + colored("@", "red") + "pc] ")
+		comd = input(red("[") + yellow(session["user"]) + green('@') + blue("musley ") + purple(session["cur_dir"].name) + red("]") + "$ ")
 	except KeyboardInterrupt:
 		print("please, use exit command to exit.")
 
-	if comd == "exit":
+	if findCommand(comd, 'exit') != None:
 		sys.exit("Goodbye, " + session["user"])
 
 	if findCommand(comd, "ls") != None:
