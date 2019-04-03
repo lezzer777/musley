@@ -4,6 +4,7 @@ from termcolor import colored
 
 import dirs
 import sys
+from os import system, name
 import re
 
 session = {
@@ -68,3 +69,9 @@ while True:
 			for subdir in session["cur_dir"].subdirs:
 				if findCommand(comd, "cd") == subdir.name:
 					session["cur_dir"] = subdir
+
+	if findCommand(comd, "clear") != None:
+		if name == "nt":
+			system("cls")
+		else:
+			system("clear")
