@@ -1,11 +1,14 @@
 #!/bin/env python3
 
 from termcolor import colored
-
+from libtvs import logo, clear
 import dirs
 import sys
 from os import system, name
 import re
+
+clear()
+logo()
 
 session = {
 	"user": None,
