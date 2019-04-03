@@ -1,5 +1,5 @@
 #!/bin/env python3
-
+from time import sleep
 from termcolor import colored
 from libtvs import logo, clear
 import dirs
@@ -108,4 +108,9 @@ while True:
 
 
 	else:
-		print(comd + ': command not found')
+		if comd == None or comd == ' ' or comd == '  ':
+			sleep(0.0001)
+		elif comd == '':
+			sleep(0.0001)
+		else:
+			print(comd + ': command not found')
