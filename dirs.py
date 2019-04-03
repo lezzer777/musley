@@ -21,8 +21,12 @@ readme = file("readme.txt", "this is file for test bla-bla-bla", "txt")
 
 # Directories initialization sub --> parents
 
+# Actually, it's going to be in character's folder
 docs = dir("Documents", [], [])
-userdir = dir("~", [docs], [readme])
+vids = dir("Videos", [], [])
+pics = dir("Pictures", [], [])
+
+userdir = dir("~", [docs, vids, pics], [])
 rootUserDir = dir("root", [], [])
 home = dir("home", [userdir], [])
 

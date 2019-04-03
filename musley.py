@@ -22,10 +22,10 @@ class user:
 		self.password = password
 		self.homedir = homedir
 
-testuser = user("testing", "123", dirs.userdir)
+mainuser = user("anon", "passwd", dirs.userdir)
 root = user("root", "toor", dirs.rootUserDir)
 
-users = [testuser, root]
+users = [mainuser, root]
 
 comd = ""
 
