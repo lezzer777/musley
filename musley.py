@@ -32,7 +32,7 @@ def purple(what):
 	
 
 def findCommand(command, tofind):
-	if re.search(tofind, command):
+	if re.search("^" + tofind, command):
 		command = command.replace(tofind, "")
 		command = command.replace(" ", "")
 		return command
