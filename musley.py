@@ -8,9 +8,23 @@ from os import system, name
 import re
 
 session = {
-	"user": "somebody",
-	"cur_dir": dirs.userdir
+	"user": None,
+	"cur_dir": None
 }
+
+class user:
+	name = ""
+	password = ""
+	homedir = None
+
+	def __init__(self, name, password, homedir):
+		self.name = name
+		self.password = password
+		self.homedir = homedir
+
+testuser = user("testing", "123", dirs.userdir)
+
+users = [testuser]
 
 comd = ""
 
@@ -37,9 +51,18 @@ def findCommand(command, tofind):
 		command = command.replace(" ", "")
 		return command
 
+while session["user"] == None:
+	u_name = input("pc login: ")
+	u_password = input("user password: ")
+
+	for user in users:
+		if u_name == user.name and u_password == user.password:
+			session["user"] = user
+			session["cur_dir"] = user.homedir
+
 while True:
 	try:
-		comd = input(red("[") + yellow(session["user"]) + green('@') + blue("musley ") + purple(session["cur_dir"].name) + red("]") + "$ ")
+		comd = input(red("[") + yellow(session["user"].name) + green('@') + blue("musley ") + purple(session["cur_dir"].name) + red("]") + "$ ")
 	except KeyboardInterrupt:
 		print("please, use exit command to exit.")
 
