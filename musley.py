@@ -76,5 +76,9 @@ while True:
 		else:
 			system("clear")
 
+	elif findCommand(comd, "whoami") != None:
+		print(session["user"])
+
+
 	else:
 		print(comd + ': command not found')
