@@ -23,8 +23,9 @@ readme = file("readme.txt", "this is file for test bla-bla-bla", "txt")
 
 docs = dir("Documents", [], [])
 userdir = dir("~", [docs], [readme])
+rootUserDir = dir("root", [], [])
 home = dir("home", [userdir], [])
 
-root = dir("/", [home], []) # Always at the end
+root = dir("/", [home, rootUserDir], []) # Always at the end
 
 paths = [root, home, userdir, docs]

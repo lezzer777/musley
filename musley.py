@@ -23,8 +23,9 @@ class user:
 		self.homedir = homedir
 
 testuser = user("testing", "123", dirs.userdir)
+root = user("root", "toor", dirs.rootUserDir)
 
-users = [testuser]
+users = [testuser, root]
 
 comd = ""
 
@@ -52,11 +53,11 @@ def findCommand(command, tofind):
 		return command
 
 while session["user"] == None:
-	u_name = input("pc login: ")
-	u_password = input("user password: ")
+	input_login = input("pc login: ")
+	input_password = input("user password: ")
 
 	for user in users:
-		if u_name == user.name and u_password == user.password:
+		if input_login == user.name and input_password == user.password:
 			session["user"] = user
 			session["cur_dir"] = user.homedir
 
@@ -67,7 +68,7 @@ while True:
 		print("please, use exit command to exit.")
 
 	if findCommand(comd, 'exit') != None:
-		sys.exit("Goodbye, " + session["user"])
+		sys.exit("Goodbye, " + session["user"].name)
 
 	elif findCommand(comd, "ls") != None:
 		for subdir in session["cur_dir"].subdirs:
@@ -100,7 +101,7 @@ while True:
 			system("clear")
 
 	elif findCommand(comd, "whoami") != None:
-		print(session["user"])
+		print(session["user"].name)
 
 
 	else:
