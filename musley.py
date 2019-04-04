@@ -8,6 +8,7 @@ import sys
 from os import system, name
 import re
 import dialogus
+import initanim
 
 def welcome():
 	print('Welcome to ' + red('BlackArch'))
