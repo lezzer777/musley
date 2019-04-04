@@ -8,6 +8,9 @@ import sys
 from os import system, name
 import re
 
+def welcome():
+	print('Welcome to ' + red('BlackArch'))
+
 clear()
 logo()
 
@@ -32,6 +35,9 @@ root = user("root", "toor", dirs.rootUserDir)
 users = [mainuser, root]
 
 comd = ""
+def panc(w):
+	global pan
+	pan=True
 
 def red(what):
 	a=colored(what,'red')
@@ -55,24 +61,34 @@ def findCommand(command, tofind):
 		command = command.replace(tofind, "")
 		command = command.replace(" ", "")
 		return command
-
+aba=0
+pan=False
 while session["user"] == None:
 	input_login = input("musley login: ")
 	input_password = input(input_login + "\'s password: ")
-
 	for user in users:
-		global pan
-		pan=False
+		
+		
 		if input_login == user.name and input_password == user.password:
 			sleep(1)
 			pan=True
 			session["user"] = user
 			session["cur_dir"] = user.homedir
 			pan=True
+			panc(1)
+			welcome()
+		if pan:
+			sleep(0.02)
+		else:
+			if aba == 0:
+				sleep(1)
+				print('System error.')
+				aba=1
+			else:
+				print('try again')
+				aba=0
 
-	if pan:
-		sleep(0.01)
-	
+
 while True:
 	try:
 		if session["cur_dir"].name == 'anon':
@@ -138,3 +154,4 @@ while True:
 			sleep(0.0001)
 		else:
 			print(comd + ': command not found')
+
