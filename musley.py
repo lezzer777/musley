@@ -60,18 +60,18 @@ while session["user"] == None:
 	input_password = input(input_login + "\'s password: ")
 
 	for user in users:
+		global pan
 		pan=False
 		if input_login == user.name and input_password == user.password:
 			sleep(1)
 			pan=True
 			session["user"] = user
 			session["cur_dir"] = user.homedir
+			pan=True
 
 	if pan:
 		sleep(0.01)
-	else:
-		print('System error. Try again')
-
+	
 while True:
 	try:
 		if session["cur_dir"].name == 'anon':
@@ -109,6 +109,9 @@ while True:
 			for subdir in session["cur_dir"].subdirs:
 				if findCommand(comd, "cd") == subdir.name:
 					session["cur_dir"] = subdir
+
+	elif findCommand(comd, 'echo') != None:
+		print(findCommand(comd, 'echo'))
 	
 	elif findCommand(comd, "clear") != None:
 		if name == "nt":
