@@ -27,7 +27,7 @@ docs = dir("Documents", [], [porn])
 vids = dir("Videos", [], [porn])
 pics = dir("Pictures", [], [porn])
 
-userdir = dir("~", [docs, vids, pics], [])
+userdir = dir('anon', [docs, vids, pics], [])
 rootUserDir = dir("root", [], [])
 home = dir("home", [userdir], [])
 bin = dir("bin", [], [])  

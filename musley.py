@@ -66,7 +66,12 @@ while session["user"] == None:
 
 while True:
 	try:
-		comd = input(red("[") + yellow(session["user"].name) + green('@') + blue("musley ") + purple(session["cur_dir"].name) + red("]") + "$ ")
+		if session["cur_dir"].name == 'anon':
+			cdn='~'
+		else:
+			cdn=session["cur_dir"].name
+
+		comd = input(red("[") + yellow(session["user"].name) + green('@') + blue("musley ") + purple(cdn) + red("]") + "$ ")
 	except KeyboardInterrupt:
 		print("please, use exit command to exit.")
 
