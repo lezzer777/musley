@@ -7,6 +7,7 @@ import dirs
 import sys
 from os import system, name
 import re
+import dialogus
 
 def welcome():
 	print('Welcome to ' + red('BlackArch'))
