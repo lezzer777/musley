@@ -1,2 +1,2 @@
 # Musley
-a hacking simulator. 
+a hacking simulator game.
