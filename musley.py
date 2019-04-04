@@ -56,13 +56,21 @@ def findCommand(command, tofind):
 		return command
 
 while session["user"] == None:
-	input_login = input("pc login: ")
-	input_password = input("user password: ")
+	input_login = input("musley login: ")
+	input_password = input(input_login + "\'s password: ")
 
 	for user in users:
+		pan=False
 		if input_login == user.name and input_password == user.password:
+			sleep(1)
+			pan=True
 			session["user"] = user
 			session["cur_dir"] = user.homedir
+
+	if pan:
+		sleep(0.01)
+	else:
+		print('System error. Try again')
 
 while True:
 	try:
