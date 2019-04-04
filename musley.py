@@ -108,8 +108,15 @@ while True:
 
 		else:
 			for subdir in session["cur_dir"].subdirs:
+				ac=False
 				if findCommand(comd, "cd") == subdir.name:
 					session["cur_dir"] = subdir
+					ac=True
+			if ac:
+				sleep(0.01)
+			else:
+				print('error. \'' + findCommand(comd, "cd") + '\' not found')
+
 
 	elif findCommand(comd, 'echo') != None:
 		print(findCommand(comd, 'echo'))
