@@ -162,9 +162,12 @@ while True:
 
 	elif findCommand(comd, "qms") != None:
 		s1=findCommand(comd, "qms")
-		if findCommand(s1, "view") != None  and findCommand(comd, "view-history") == None:
+		if findCommand(s1, "view") != None:
 			s2=findCommand(s1, "view")
 			ans=dialogus.viewmessage(s2)
+		elif findCommand(s1, "history") != None:
+			s2=findCommand(s1, "history")
+			ans=dialogus.viewhistory(s2)
 		else:
 			print(s1 + ': option not found')
 
