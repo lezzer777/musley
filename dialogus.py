@@ -33,12 +33,12 @@ def viewmessage(fromwho):
 			a=(eval(fromwho).todo)
 			print(' ')
 			ans=(eval(a))
-			print(' ')
 			eval(fromwho).todo=None
+			return ans
 			
 		else:
 			print('empty')
-	except TypeError:
+	except NameError:
 		print('error03: ' + fromwho + ': no such person')
 # нивкакиекавычки
 

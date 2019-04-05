@@ -98,7 +98,8 @@ while True:
 			cdn='~'
 		else:
 			cdn=session["cur_dir"].name
-
+			dialogus.notify('test','it\'s a beta','menu([\'yeah, i know\',\'i know (2)\'],\'test\')')
+		
 		comd = input(red("[") + yellow(session["user"].name) + green('@') + blue("musley ") + purple(cdn) + red("]") + "$ ")
 	except KeyboardInterrupt:
 		print("please, use exit command to exit.")
@@ -127,6 +128,14 @@ while True:
 
 		else:
 			for subdir in session["cur_dir"].subdirs:
+				try:
+					if ac:
+						sleep(0.01)
+					else:
+						ac=False
+				except NameError:
+					ac=False
+						
 				ac=False
 				if findCommand(comd, "cd") == subdir.name:
 					session["cur_dir"] = subdir
@@ -134,7 +143,8 @@ while True:
 			if ac:
 				sleep(0.01)
 			else:
-				print('error. \'' + findCommand(comd, "cd") + '\' not found')
+				sleep(0.01)
+#				print('error. \'' + findCommand(comd, "cd") + '\' not found')
 
 
 	elif findCommand(comd, 'echo') != None:
@@ -152,9 +162,9 @@ while True:
 
 	elif findCommand(comd, "qms") != None:
 		s1=findCommand(comd, "qms")
-		if findCommand(s1, "view") != None:
+		if findCommand(s1, "view") != None  and findCommand(comd, "view-history") == None:
 			s2=findCommand(s1, "view")
-			dialogus.viewmessage(s2)
+			ans=dialogus.viewmessage(s2)
 		else:
 			print(s1 + ': option not found')
 
@@ -165,4 +175,5 @@ while True:
 			sleep(0.0001)
 		else:
 			print(comd + ': command not found')
+
 
