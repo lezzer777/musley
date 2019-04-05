@@ -8,7 +8,9 @@ import sys
 from os import system, name
 import re
 import dialogus
-import initanim
+# import initanim # убрать на время разработки
+import libsoft
+import datetime
 
 def welcome():
 	print('Welcome to ' + red('BlackArch'))
@@ -159,6 +161,27 @@ while True:
 	elif findCommand(comd, "whoami") != None:
 		print(session["user"].name)
 
+
+	elif findCommand(comd, "nmap") != None:
+		s1=findCommand(comd, "nmap ")
+		if comd == 'nmap' or comd == 'nmap ' or comd == 'nmap  ':
+			print('''
+e01: option needed
+
+EXAMPLES:
+  nmap -On tvsclass.github.io
+SEE THE MAN PAGE (https://nmap.org/book/man.html) FOR MORE OPTIONS AND EXAMPLES ''')
+		else:
+
+			if findCommand(s1, "-On"):
+				ip=findCommand(s1, "-On")
+				libsoft.nmap(ip)
+			else:
+				date=datetime.date.today()
+				print('''Starting Nmap 7.70 ( https://nmap.org ) at ''' + str(date) + '''
+Failed to resolve \'''' + s1 + '''\'
+WARNING: No targets were specified, so 0 hosts scanned.
+Nmap done: 0 IP addresses (0 hosts up) scanned in 0.15 seconds ''')
 
 	elif findCommand(comd, "qms") != None:
 		s1=findCommand(comd, "qms")
