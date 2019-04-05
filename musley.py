@@ -12,6 +12,7 @@ import initanim
 
 def welcome():
 	print('Welcome to ' + red('BlackArch'))
+	dialogus.say('qms-service','qms-service ready to recieve messages')
 
 clear()
 logo()
