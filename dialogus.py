@@ -39,7 +39,7 @@ def say(name, phrase):
 
 def notify(name, phrase, todo):
 	
-	print("You have an unread message from: " + libtvs.blue(eval(name).name))
+	print("You have an unread message from: " + libtvs.blue(eval(name).name) + 'type \'qms view [' + eval(name).name + ']\' to open message')
 	eval(name).unread=(libtvs.blue(eval(name).name) + ": " + phrase)
 	eval(name).todo=todo
 
