@@ -1,7 +1,7 @@
 import libtvs
 from libtvs import green
 
-class somebody:
+class person:
 	name=''
 	unreaded=''
 	history=''
@@ -12,7 +12,7 @@ class somebody:
 		self.history=history
 		self.todo=todo
 
-test=somebody('sunshine',None,None,None)
+test=person('sunshine',None,None,None)
 
 def viewhistory(fromwho):
 	print('\n========================================')
