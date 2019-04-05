@@ -15,7 +15,7 @@ class somebody:
 test=somebody('sunshine',None,None,None)
 
 def viewhistory(fromwho):
-	print('\n ========================================')
+	print('\n========================================')
 	print(eval(fromwho).history)
 	print('======================================== \n')
 
@@ -31,9 +31,9 @@ def viewmessage(fromwho):
 				eval(fromwho).history=eval(fromwho).unreaded
 			eval(fromwho).unreaded=None
 			a=(eval(fromwho).todo)
-			print('[')
-			print(a)
-			print(']')
+			print(' ')
+			ans=(eval(a))
+			print(' ')
 			eval(fromwho).todo=None
 			
 		else:
@@ -57,15 +57,15 @@ def menu(answers, asking):
 	while callback == "1" or callback != "2":
 		callback = input("Answer: ")
 		if callback == "1":
-			you=green('You: ')
+			you=green('You') + (': ')
 			eah=eval(asking).history
-			eval(asking).history=(str(you) + str(eah) + str(answers[0]))
+			eval(asking).history=(str(eah) + '\n' + str(you) +  str(answers[0]))
 			return 1
 		elif callback == "2":
-			you=green('You: ')
+			you=green('You') + (': ')
 			eah=eval(asking).history
-			eval(asking).history=(str(you) + str(eah) + str(answers[1]))
+			eval(asking).history=(str(eah) + '\n' + str(you) +  str(answers[1]))
 			return 2
 		else:
-			print(libtvs.red("Not right number, yeah?"))
+			print(libtvs.red('\'' + callback + "\': is not right number, yeah?"))
 
