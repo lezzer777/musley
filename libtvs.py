@@ -1,4 +1,4 @@
-import tvslogo
+#import tvslogo
 from termcolor import colored
 from os import system
 import itertools

@@ -26,5 +26,5 @@ def nmap(addr):
     if "smb" in addr.openPorts:
         print("139/smb   open    windows")
     if "tcp" in addr.openPorts:
-        print("8080    open    whoknows")
+        print("8080      open    whoknows")
 nmap(evilcorp)
