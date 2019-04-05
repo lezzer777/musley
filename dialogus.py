@@ -21,8 +21,8 @@ def viewhistory(fromwho):
 def viewmessage(fromwho):
 	try:
 
-		if eval(fromwho).unread != None:
-			print(eval(fromwho).unread)
+		if eval(fromwho).unreaded != None:
+			print(eval(fromwho).unreaded)
 
 			if eval(fromwho).todo != None:
 				c=eval(fromwho).todo
@@ -32,7 +32,7 @@ def viewmessage(fromwho):
 				eval(fromwho).history=eval(fromwho).history + '\n' + eval(fromwho).unread
 			except TypeError:
 				eval(fromwho).history=eval(fromwho).unread
-			eval(fromwho).unread=None
+			eval(fromwho).unreaded=None
 		else:
 			print('empty')
 	except NameError:
