@@ -14,8 +14,9 @@ class somebody:
 test=somebody('sunshine',None,None,None)
 
 def viewhistory(fromwho):
-	print('========================================')
+	print('\n ========================================')
 	print(eval(fromwho).history)
+	print('======================================== \n')
 
 def viewmessage(fromwho):
 	if eval(fromwho).unread != None:
@@ -39,7 +40,7 @@ def say(name, phrase):
 
 def notify(name, phrase, todo):
 	
-	print("You have an unread message from: " + libtvs.blue(eval(name).name) + 'type \'qms view [' + eval(name).name + ']\' to open message')
+	print("You have an unread message from: " + libtvs.blue(eval(name).name) + '\n type \'qms view ' + eval(name).name + '\' to open message')
 	eval(name).unread=(libtvs.blue(eval(name).name) + ": " + phrase)
 	eval(name).todo=todo
 
