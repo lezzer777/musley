@@ -37,5 +37,3 @@ def nmap(ip):
             print("8080      open    whoknows")
     else:
         print("Host is down")
-nmap("228.6.6.31")
-nmap("flex")
