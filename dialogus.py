@@ -19,21 +19,25 @@ def viewhistory(fromwho):
 	print('======================================== \n')
 
 def viewmessage(fromwho):
-	if eval(fromwho).unread != None:
-		print(eval(fromwho).unread)
+	try:
 
-		if eval(fromwho).todo != None:
-			c=eval(fromwho).todo
-			eval(c)
-			eval(fromwho).todo=None
+		if eval(fromwho).unread != None:
+			print(eval(fromwho).unread)
 
-		try:
-			eval(fromwho).history=eval(fromwho).history + '\n' + eval(fromwho).unread
-		except TypeError:
-			eval(fromwho).history=eval(fromwho).unread
-		eval(fromwho).unread=None
-	else:
-		print('empty')
+			if eval(fromwho).todo != None:
+				c=eval(fromwho).todo
+				eval(c)
+				eval(fromwho).todo=None
+			try:
+				eval(fromwho).history=eval(fromwho).history + '\n' + eval(fromwho).unread
+			except TypeError:
+				eval(fromwho).history=eval(fromwho).unread
+			eval(fromwho).unread=None
+		else:
+			print('empty')
+	except NameError:
+		print('error03: no such person')
+
 
 def say(name, phrase):
 	print(libtvs.blue(name) + ": " + phrase)

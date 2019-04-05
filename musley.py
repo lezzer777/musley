@@ -150,6 +150,14 @@ while True:
 		print(session["user"].name)
 
 
+	elif findCommand(comd, "qms") != None:
+		s1=findCommand(comd, "qms")
+		if findCommand(s1, "view") != None:
+			s2=findCommand(s1, "view")
+			dialogus.viewmessage(s2)
+		else:
+			print(s1 + ': option not found')
+
 	else:
 		if comd == None or comd == ' ' or comd == '  ':
 			sleep(0.0001)
