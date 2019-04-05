@@ -24,21 +24,23 @@ def viewmessage(fromwho):
 
 		if eval(fromwho).unreaded != None:
 			print(eval(fromwho).unreaded)
-			print(eval(fromwho).name)
-			if eval(fromwho).todo != None:
-				c=eval(fromwho).todo
-				eval(c)
-				eval(fromwho).todo=None
+
 			try:
 				eval(fromwho).history=eval(fromwho).history + '\n' + eval(fromwho).unreaded
 			except TypeError:
 				eval(fromwho).history=eval(fromwho).unreaded
 			eval(fromwho).unreaded=None
+			a=(eval(fromwho).todo)
+			print('[')
+			print(a)
+			print(']')
+			eval(fromwho).todo=None
+			
 		else:
 			print('empty')
-	except NameError:
+	except TypeError:
 		print('error03: ' + fromwho + ': no such person')
-
+# нивкакиекавычки
 
 def say(name, phrase):
 	print(libtvs.blue(name) + ": " + phrase)
