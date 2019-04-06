@@ -26,7 +26,7 @@ def toFixed(numObj, digits=0):
 def ok(what):
 	print('[' + green('OK') + '] ' + what)
 def error(what):
-	print('[' + red('ERROR') + '] ' + what)
+	print('[' + red('FAILED') + '] ' + what)
 def loading(what):
 	print('[' + blue('***') + '] ' + what)
 def wsnloading(what, t, r):
