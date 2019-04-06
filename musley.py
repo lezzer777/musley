@@ -2,7 +2,6 @@
 #test
 from time import sleep
 from termcolor import colored
-from libtvs import clear
 import dirs
 import sys
 from os import system, name
@@ -11,6 +10,7 @@ import dialogus
 # import initanim # убрать на время разработки
 import libsoft
 import datetime
+from libtvs import *
 
 def welcome():
 	print('Welcome to ' + red('BlackArch'))
@@ -42,24 +42,7 @@ users = [mainuser, root]
 comd = ""
 def panc(w):
 	global pan
-	pan=True
-
-def red(what):
-	a=colored(what,'red')
-	return a
-def blue(what):
-	a=colored(what,'blue')
-	return a
-def green(what):
-	a=colored(what,'green')
-	return a
-def yellow(what):
-	a=colored(what,'yellow')
-	return a
-def purple(what):
-	a=colored(what,'magenta')
-	return a
-	
+	pan=True	
 
 def findCommand(command, tofind):
 	if re.search("^" + tofind, command):
@@ -174,6 +157,8 @@ while True:
 	elif findCommand(comd, "whoami") != None:
 		print(session["user"].name)
 
+	elif findCommand(comd, "pacman") != None:
+		print('bash: /usr/bin/pacman: Permission denied')
 
 	elif findCommand(comd, "nmap") != None:
 		s1=findCommand(comd, "nmap")
