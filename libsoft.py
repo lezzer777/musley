@@ -28,7 +28,7 @@ def nmap(ip):
     
     if obj != None:
         print("Nmap scan report for " + ip)
-        print("Host is up (" + str(random.random()) + " lattency).")
+        print("Host is up (" + libtvs.toFixed(random.random(), 3) + " lattency).")
         print("Not shown: " + str(1000 - len(adress.openPorts)) + " closed ports")
         print("PORT    STATE    SERVICE")
         if "smb" in adress.openPorts:
@@ -36,4 +36,4 @@ def nmap(ip):
         if "tcp" in adress.openPorts:
             print("8080      open    whoknows")
     else:
-        print("Host is down")
+        print("Nmap done: 1 IP addresses (0 hosts up) scanned in " + libtvs.toFixed(random.random(), 3) + " seconds")

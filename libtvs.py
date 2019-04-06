@@ -20,6 +20,9 @@ def purple(what):
  a=colored(what,'magenta')
  return a
 
+def toFixed(numObj, digits=0):
+    return f"{numObj:.{digits}f}"
+
 def ok(what):
 	print('[' + green('OK') + '] ' + what)
 def error(what):
