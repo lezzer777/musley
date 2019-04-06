@@ -34,7 +34,7 @@ def nmap(ip):
         print("Not shown: " + str(1000 - len(adress.openPorts)) + " closed ports")
         print("PORT    STATE    SERVICE")
         if "smb" in adress.openPorts:
-            print("139/smb   open    windows")
+            print("139/smb   open    шindows")
         if "tcp" in adress.openPorts:
             print("8080      open    whoknows")
         if "ssh" in adress.openPorts:
