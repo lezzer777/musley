@@ -158,12 +158,25 @@ while True:
 		else:
 			system("clear")
 
+	elif findCommand(comd, "ssh") != None:
+		s1=findCommand(comd, "ssh")
+		if s1 == None or s1 == ' ' or s1 == '':
+			print('''usage: ssh [-46AaCfGgKkMNnqsTtVvXxYy] [-B bind_interface]
+		 [-b bind_address] [-c cipher_spec] [-D [bind_address:]port]
+		 [-E log_file] [-e escape_char] [-F configfile] [-I pkcs11]
+		 [-i identity_file] [-J [user@]host[:port]] [-L address]
+		 [-l login_name] [-m mac_spec] [-O ctl_cmd] [-o option] [-p port]
+		 [-Q query_option] [-R address] [-S ctl_path] [-W host:port]
+		 [-w local_tun[:remote_tun]] destination [command]''')
+		else:
+			libsoft.ssh(s1)
+
 	elif findCommand(comd, "whoami") != None:
 		print(session["user"].name)
 
 
 	elif findCommand(comd, "nmap") != None:
-		s1=findCommand(comd, "nmap ")
+		s1=findCommand(comd, "nmap")
 		if comd == 'nmap' or comd == 'nmap ' or comd == 'nmap  ':
 			print('''
 e01: option needed
