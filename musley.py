@@ -2,7 +2,7 @@
 #test
 from time import sleep
 from termcolor import colored
-from libtvs import logo, clear
+from libtvs import clear
 import dirs
 import sys
 from os import system, name
@@ -17,7 +17,7 @@ def welcome():
 	dialogus.say('qms-service','qms-service ready to recieve messages')
 
 clear()
-logo()
+import musleylogo
 
 session = {
 	"user": None,
