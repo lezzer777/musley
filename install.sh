@@ -1,9 +1,15 @@
 #!/bin/bash
 
+exec 2>/dev/null
+exec 3>/dev/null
+
 # я ворвался в скрипт и абля
 
 function pipcheck {
-	if pip >> /dev/null;
+	echo checking pip...
+	if find /usr/bin/pip >&3;
+	then echo;
+	elif find /data/data/com.termux/files/usr/bin/pip;
 	then echo;
 	else echo "can't find pip. Try to install 'python-pip or 'pip' package"
 	echo Aborting...
@@ -50,9 +56,10 @@ sudocheck
 
 echo "Installing termcolor - a python libary for text coloring."
 pipcheck
-if $cmd install termcolor >> /dev/null
+
+if $cmd install termcolor >&3;
 then echo;
-else echo an error occurred while installing termcolor by pip. Try to install termcolor yourself by '$cmd install termcolor' command.
+else echo an error occurred while installing termcolor by pip. Try to install termcolor yourself by $cmd install termcolor command.
 exit 2;
 fi
 echo "Success. You can run 'python musley.py' now."
