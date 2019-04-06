@@ -35,7 +35,7 @@ def wsnloading(what, t, r):
 	for x in range(r):
 		time.sleep(t)
 		print(next(it), end='', flush=True)
-	print('\n')
+	#print('\n')
 
 def logo():
 	print(red("""
