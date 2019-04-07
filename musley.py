@@ -133,7 +133,9 @@ while True:
 
 
 	elif findCommand(comd, 'echo') != None:
-		print(findCommand(comd, 'echo'))
+		a=findCommand(comd, 'echo')
+		a=a.replace('\'','')
+		print(a)
 	
 	elif findCommand(comd, "clear") != None:
 		if name == "nt":
