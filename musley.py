@@ -8,6 +8,7 @@ from os import system, name
 import re
 import dialogus
 # import initanim # убрать на время разработки
+import script_line
 import libsoft
 import datetime
 from libtvs import *
