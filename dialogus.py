@@ -86,7 +86,6 @@ def menu(answers, asking):
 			eah=eval(asking).history
 			eval(asking).history=(str(eah) + '\n' + str(you) +  str(answers[0]))
 			eval(asking).lastans=1
-			
 			return 1
 		elif callback == "2":
 			you=green('You') + (': ')
@@ -95,6 +94,7 @@ def menu(answers, asking):
 			eval(asking).lastans=2
 			return 2
 		else:
-			print('qms: ' + 'libtvs.red('\'' + callback + "\': is not right number, yeah?"))
-		print('history saved. type \'qms history '+ asking + '\' + ' to view history')
+			print('qms: ' + libtvs.red('\'' + callback + "\': is not right number, yeah?"))
+			
+		print('history saved. type \'qms history '+ asking + '\'' + ' to view history')
 
