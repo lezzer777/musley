@@ -30,7 +30,7 @@ class person:
 
 sunshine=person('sunshine',None,None,None,None,0)
 
-artem=person('artem',None,None,None,None,0)
+NoName=person('NoName',None,None,None,None,0)
 
 
 ####################################

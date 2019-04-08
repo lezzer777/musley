@@ -63,7 +63,7 @@ def main():
 	if save == 0:
 		if not readed:
 			#notify('artem','hello','menu([\'hello\',\'who are you?\'],\'artem\')')
-			mnoty('artem','hello','hello','who are you?')
+			mnoty('NoName','hello','hello','who are you?')
 			readed=True
 		else:
 			save=1
@@ -77,5 +77,5 @@ def main():
 		else:
 			artem.respect=0
 		savef('.save',2)
-		savef('.artem',artem.respect)
-		savef('.artemhistory',artem.history)
+		savef('.NoName',artem.respect)
+		savef('.NoNamehistory',artem.history)
