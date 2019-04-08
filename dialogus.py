@@ -6,13 +6,18 @@ class person:
 	unreaded=''
 	history=''
 	todo=''
-	def __init__(self, name, unreaded, history, todo):
+	lastans=''
+	respect=''
+	def __init__(self, name, unreaded, history, todo, lastans, respect):
 		self.name=name
 		self.unreaded=unreaded
 		self.history=history
 		self.todo=todo
+		self.lastans=lastans
+		self.respect=respect
 
-test=person('sunshine',None,None,None)
+sunshine=person('sunshine',None,None,None,None,0)
+artem=person('artem',None,None,None,None,0)
 
 def viewhistory(fromwho):
 	print('\n========================================')
@@ -60,11 +65,13 @@ def menu(answers, asking):
 			you=green('You') + (': ')
 			eah=eval(asking).history
 			eval(asking).history=(str(eah) + '\n' + str(you) +  str(answers[0]))
+			eval(asking).lastans=1
 			return 1
 		elif callback == "2":
 			you=green('You') + (': ')
 			eah=eval(asking).history
 			eval(asking).history=(str(eah) + '\n' + str(you) +  str(answers[1]))
+			eval(asking).lastans=2
 			return 2
 		else:
 			print(libtvs.red('\'' + callback + "\': is not right number, yeah?"))
