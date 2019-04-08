@@ -16,8 +16,28 @@ class person:
 		self.lastans=lastans
 		self.respect=respect
 
+
+
+
+##################################
+#                                #
+#               PERSONS                   #
+#                                #
+##################################
+
+
+
+
 sunshine=person('sunshine',None,None,None,None,0)
+
 artem=person('artem',None,None,None,None,0)
+
+
+####################################
+
+
+
+
 
 def viewhistory(fromwho):
 	print('\n========================================')

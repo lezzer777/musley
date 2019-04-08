@@ -2,9 +2,8 @@
 from libtvs import *
 from time import sleep
 from dialogus import *
+
 # вообще можно сразу файл открыть в w потом в r, но я хочу ебучую фиолетовую надпись 
-
-
 
 def savef(a_kuda,a_chto):
 	saveW=open(a_kuda,'w')
@@ -15,6 +14,16 @@ def loadrep(kavo):
 	rep=open('.' + kavo,'r')
 	eval(kavo).respect=rep.read()
 	rep.close
+	
+def loadhistory(kavo):
+	rep=open('.' + kavo + 'history','r')
+	eval(kavo).history=rep.read()
+	rep.close
+
+def mnoty(who, phrase, ans1, ans2):
+	notify(who,phrase,'menu([\'' + ans1 + '\',\'' + ans2 + '\'],\'' + who + '\')')
+	#a= ('notify(' + str(who) + ',' + str(phrase) + ',' + 'menu([\'' + ans1 + '\',\'' + ans2 + '\']),\'artem\')')
+	#eval(a)
 
 loading('loading savefile...')
 sleep(0.2)
@@ -23,6 +32,7 @@ try:
 	saveR=open('.save','r')
 	saveR.close()
 	loadrep('artem')
+	loadhistory('artem')
 
 except FileNotFoundError:
 	print(purple('creating safefile...'))
@@ -52,7 +62,8 @@ def main():
 
 	if save == 0:
 		if not readed:
-			notify('artem','hello','menu([\'hello\',\'who are you?\'],\'artem\')')
+			#notify('artem','hello','menu([\'hello\',\'who are you?\'],\'artem\')')
+			mnoty('artem','hello','hello','who are you?')
 			readed=True
 		else:
 			save=1
@@ -67,3 +78,4 @@ def main():
 			artem.respect=0
 		savef('.save',2)
 		savef('.artem',artem.respect)
+		savef('.artemhistory',artem.history)
