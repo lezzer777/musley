@@ -19,6 +19,7 @@ def welcome():
 
 clear()
 import musleylogo
+dialogus.say('system','anonymous login:passsword - anon:passwd')
 
 session = {
 	"user": None,

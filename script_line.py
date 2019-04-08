@@ -31,8 +31,8 @@ sleep(0.2)
 try:
 	saveR=open('.save','r')
 	saveR.close()
-	loadrep('artem')
-	loadhistory('artem')
+	loadrep('NoName')
+	loadhistory('NoName')
 
 except FileNotFoundError:
 	print(purple('creating safefile...'))
@@ -54,6 +54,15 @@ readed=False
 print(green('save file loaded sucsessfuly'))
 ok('load savefile')
 
+
+
+#########################################################
+#                                                       #
+#                ВОТ ЕБУЧАЯ ЛИНЕЙНОСТЬ                  #
+#                                                       #
+#########################################################
+
+
 def main():
 
 	global readed
@@ -72,10 +81,23 @@ def main():
 
 	if save == 1:
 
-		if artem.lastans == 1:
-			artem.respect=1
+		if NoName.lastans == 1:
+			NoName.respect=1
 		else:
-			artem.respect=0
+			NoName.respect=0
 		savef('.save',2)
-		savef('.NoName',artem.respect)
-		savef('.NoNamehistory',artem.history)
+		savef('.NoName',NoName.respect)
+		savef('.NoNamehistory',NoName.history)
+		
+		
+		
+		
+		
+		
+		
+		
+		
+#                  КОНЕЦ СУКА ЛИНЕЙНОСТИ                          #
+###################################################################
+
+
