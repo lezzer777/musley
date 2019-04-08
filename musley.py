@@ -79,13 +79,12 @@ while session["user"] == None:
 
 
 while True:
+	script_line.main()
 	try:
 		if session["cur_dir"].name == 'anon':
 			cdn='~'
 		else:
 			cdn=session["cur_dir"].name
-			dialogus.notify('test','it\'s a beta','menu([\'yeah, i know\',\'i know (2)\'],\'test\')')
-		
 		comd = input(red("[") + yellow(session["user"].name) + green('@') + blue("musley ") + purple(cdn) + red("]") + "$ ")
 	except KeyboardInterrupt:
 		print("please, use exit command to exit.")

@@ -46,10 +46,18 @@ ok('load savefile')
 
 def main():
 
+	global readed
+
+	global save
+
 	if save == 0:
-		notify('artem','hello','menu([\'hello\',\'who are you?\'],\'artem\')')
-		save=1
-		savef('.save',1)
+		if not readed:
+			notify('artem','hello','menu([\'hello\',\'who are you?\'],\'artem\')')
+			readed=True
+		else:
+			save=1
+			savef('.save',1)
+			readed=False
 
 	if save == 1:
 
