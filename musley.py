@@ -13,6 +13,7 @@ import script_line
 import libsoft
 import datetime
 from libtvs import *
+from ss import session
 
 def welcome():
 	print('Welcome to ' + red('BlackArch'))
@@ -21,11 +22,6 @@ def welcome():
 clear()
 import musleylogo
 dialogus.say('system','anonymous login:passsword - anon:passwd')
-
-session = {
-	"user": None,
-	"cur_dir": None
-}
 
 class user:
 	name = ""
@@ -164,6 +160,18 @@ while True:
 	elif findCommand(comd, "pacman") != None:
 		print('bash: /usr/bin/pacman: Permission denied')
 
+########## LIBSOFT ##########
+
+	elif findCommand(comd, "curl") != None:
+		if comd == 'curl' or comd == 'curl ' or comd == 'curl  ':
+			print('''
+CANNOT LINK EXECUTABLE "curl": cannot locate symbol "curl_url" referenced by "/data/data/com.termux/files/usr/bin/curl"...
+Aborted''')
+
+		else:
+			s1=findCommand(comd, "curl")
+			libsoft.curl(s1)
+
 	elif findCommand(comd, "nmap") != None:
 		s1=findCommand(comd, "nmap")
 		if comd == 'nmap' or comd == 'nmap ' or comd == 'nmap  ':
@@ -184,6 +192,8 @@ SEE THE MAN PAGE (https://nmap.org/book/man.html) FOR MORE OPTIONS AND EXAMPLES 
 Failed to resolve \'''' + s1 + '''\'
 WARNING: No targets were specified, so 0 hosts scanned.
 Nmap done: 0 IP addresses (0 hosts up) scanned in 0.15 seconds ''')
+
+############ --LIBSOFT #############
 
 	elif findCommand(comd, "валера лох") != None:
 		mnoty('sunshine','''
