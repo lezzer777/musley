@@ -2,6 +2,7 @@ import libtvs
 import time
 import datetime
 import random
+import dirs
 
 class addr:
     openPorts = []
@@ -18,7 +19,7 @@ class addr:
 # Initializtation
 evilcorp = addr(["tcp", "smb", "ssh"], "228.6.6.31", True, "123", "evil")
 adresses = [evilcorp]
-
+r_files = [dirs.passwords]
 def nmap(ip):
     obj = None
     print("Starting Nmap 7.70 ( https://nmap.org ) at " + str(datetime.date.today()))
@@ -61,3 +62,12 @@ def ssh(ip):
             print("Incorrect password for root@" + obj.hostname)
     else:
         print("Cant resolve host " + ip)
+
+def curl(addr):
+    for r_file in r_files:
+        if addr == r_file.r_path:
+            session["cur_dir"].files.append(r_file)
+            sleep(1)
+            print("Downloaded.")
+        else:
+            print("Can't reach the target.")

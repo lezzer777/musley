@@ -1,31 +1,32 @@
 class dir:
-	name = ""
-	subdirs = []
-	files = []
-	def __init__(self, name, subdirs, files):
-		self.name = name
-		self.subdirs = subdirs
-		self.files = files		
+        name = ""
+        subdirs = []
+        files = []
+        def __init__(self, name, subdirs, files):
+                self.name = name
+                self.subdirs = subdirs
+                self.files = files              
 
 class file:
-	name = ""
-	content = ""
-	type = ""
-	def __init__(self, name, content, type):
-		self.name = name
-		self.content = content
-		self.type = type
+        name = ""
+        content = ""
+        type = ""
+        r_path = ""
+        def __init__(self, name, content, type, r_path):
+                self.name = name
+                self.content = content
+                self.type = type
+                self.r_path = r_path
 # Files initialization
 
-readme = file("readme.txt", "this is file for test bla-bla-bla", "txt") 
-porn = file('porn', 'nothing','')
+passwords = file("passwords.txt", "kavo:tavo", "txt", "https://kavo.com/passwords.txt")
 
 # Directories initialization sub --> parents
 
 # Actually, it's going to be in character's folder
-docs = dir("Documents", [], [porn])
-vids = dir("Videos", [], [porn])
-pics = dir("Pictures", [], [porn])
+docs = dir("Documents", [], [])
+vids = dir("Videos", [], [])
+pics = dir("Pictures", [], [])
 
 userdir = dir('anon', [docs, vids, pics], [])
 rootUserDir = dir("root", [], [])
