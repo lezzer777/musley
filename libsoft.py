@@ -3,6 +3,8 @@ import time
 import datetime
 import random
 import dirs
+from ss import session
+from time import sleep
 
 class addr:
     openPorts = []
