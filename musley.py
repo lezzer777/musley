@@ -8,6 +8,7 @@ from os import system, name
 import re
 import dialogus
 # import initanim # убрать на время разработки
+from script_line import mnoty
 import script_line
 import libsoft
 import datetime
@@ -183,6 +184,13 @@ SEE THE MAN PAGE (https://nmap.org/book/man.html) FOR MORE OPTIONS AND EXAMPLES 
 Failed to resolve \'''' + s1 + '''\'
 WARNING: No targets were specified, so 0 hosts scanned.
 Nmap done: 0 IP addresses (0 hosts up) scanned in 0.15 seconds ''')
+
+	elif findCommand(comd, "валера лох") != None:
+		mnoty('sunshine','''
+Дружочек, ты походу не понял с кем связался. 
+Твоя манера речи \"клоунская\" меня не 
+впечатляет. Давай я приеду к тебе и обьясню 
+тебе всё на понятном тебе языке. Языке боли ''' ,'я гей','я гей')
 
 	elif findCommand(comd, "qms") != None:
 		s1=findCommand(comd, "qms")
