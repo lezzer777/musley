@@ -34,7 +34,7 @@ try:
 	loadhistory('NoName')
 
 except FileNotFoundError:
-	print(purple('creating safefile...'))
+	print(purple('creating savefile...'))
 	savef('.save',0)
 
 saveR=open('.save','r')
@@ -50,7 +50,7 @@ except ValueError:
 
 readed=False
 
-print(green('save file loaded sucsessfuly'))
+print(green('save file loaded successfuly'))
 ok('load savefile')
 
 
