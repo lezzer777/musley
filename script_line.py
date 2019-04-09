@@ -1,9 +1,8 @@
-# ПОРА ДОБАВИТЬ ЕБУЧЕЙ ЛИНЕЙНОСТИ В ЭТОТ НЕ МЕНЕЕ ЕБУЧИЙ СКРИПТ
 from libtvs import *
 from time import sleep
 from dialogus import *
 
-# вообще можно сразу файл открыть в w потом в r, но я хочу ебучую фиолетовую надпись 
+# вообще можно сразу файл открыть в w потом в r, но я хочу фиолетовую надпись 
 
 def savef(a_kuda,a_chto):
 	saveW=open(a_kuda,'w')
@@ -35,7 +34,7 @@ try:
 	loadhistory('NoName')
 
 except FileNotFoundError:
-	print(purple('creating safefile...'))
+	print(purple('creating savefile...'))
 	savef('.save',0)
 
 saveR=open('.save','r')
@@ -51,14 +50,14 @@ except ValueError:
 
 readed=False
 
-print(green('save file loaded sucsessfuly'))
+print(green('save file loaded successfuly'))
 ok('load savefile')
 
 
 
 #########################################################
 #                                                       #
-#                ВОТ ЕБУЧАЯ ЛИНЕЙНОСТЬ                  #
+#                ВОТ ЛИНЕЙНОСТЬ                  #
 #                                                       #
 #########################################################
 
@@ -97,7 +96,7 @@ def main():
 		
 		
 		
-#                  КОНЕЦ СУКА ЛИНЕЙНОСТИ                          #
+#                  КОНЕЦ ЛИНЕЙНОСТИ                           
 ###################################################################
 
 
