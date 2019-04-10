@@ -162,6 +162,10 @@ while True:
 
 ########## LIBSOFT ##########
 
+	elif findCommand(comd, "mkdir") != None:
+		s1=findCommand(comd, "mkdir")
+		libsoft.mkdir(s1)
+
 	elif findCommand(comd, "curl") != None:
 		if comd == 'curl' or comd == 'curl ' or comd == 'curl  ':
 			print('''

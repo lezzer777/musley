@@ -5,6 +5,8 @@ import random
 import dirs
 from ss import session
 from time import sleep
+from dirs import file
+from dirs import dir
 
 class addr:
     openPorts = []
@@ -73,3 +75,8 @@ def curl(addr):
             print("Downloaded.")
         else:
             print("Can't reach the target.")
+
+def mkdir(name):
+	name=dir(name, [], [])
+	session["cur_dir"].subdirs.append(name)
+	sleep(0.2)
