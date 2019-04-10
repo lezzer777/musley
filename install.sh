@@ -20,9 +20,9 @@ function pipcheck {
 }
 
 function sudocheck {
-if sudo >> /dev/null;
-then cmd=sudo pip;
-else cmd=pip
+if sudo -h >> /dev/null;
+then cmd='sudo pip';
+else cmd='pip'
 echo
 echo
 echo
@@ -48,10 +48,9 @@ function main {
 echo
 echo
 echo
-printf "This script will install dependencies for Musley\nWait a few seconds untill the scripts ends.\n---\n
-"
+printf "This script will install dependencies for Musley\nWait a few seconds untill the scripts ends.\n---\n"
 
-echo checking for sudo...
+echo 'checking for sudo...'
 sudocheck
 
 echo "Installing termcolor - a python libary for text coloring."
