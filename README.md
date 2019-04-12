@@ -7,6 +7,9 @@ a hacking simulator game.
 
 # Installation
 ~~~~
+#Linux
+~~~~
+~~~~
 cd ~
 git clone https://github.com/lezzer777/musley.git
 cd musley
