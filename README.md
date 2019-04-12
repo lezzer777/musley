@@ -6,9 +6,7 @@ a hacking simulator game.
 - termcolor package
 
 # Installation
-~~~~
-#Linux
-~~~~
+# Linux
 ~~~~
 cd ~
 git clone https://github.com/lezzer777/musley.git
