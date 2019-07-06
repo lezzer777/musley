@@ -1,4 +1,5 @@
 #!/bin/bash
+# вот кто кто, а shell - лучший язык
 
 exec 2>/dev/null
 exec 3>/dev/null
